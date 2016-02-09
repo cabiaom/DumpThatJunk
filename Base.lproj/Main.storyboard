@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rxq-9g-eiy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rxq-9g-eiy">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--Search View Controller-->
@@ -47,6 +47,50 @@
             </objects>
             <point key="canvasLocation" x="1143.5" y="470.5"/>
         </scene>
+        <!--AddViewController-->
+        <scene sceneID="M1a-Af-wDG">
+            <objects>
+                <viewController title="AddViewController" id="o3f-zN-dyE" customClass="AddViewController" customModule="DumpThatJunk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0TH-cW-JJn"/>
+                        <viewControllerLayoutGuide type="bottom" id="8vg-00-Dii"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iDy-6J-VEi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUn-se-83M">
+                                <rect key="frame" x="55" y="51" width="54" height="30"/>
+                                <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="CameraAction:" destination="o3f-zN-dyE" eventType="touchUpInside" id="hWv-5P-CL9"/>
+                                    <action selector="PhotoLibraryAction:" destination="o3f-zN-dyE" eventType="touchUpInside" id="hsV-Jv-6cx"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EhA-Ac-u7e">
+                                <rect key="frame" x="55" y="100" width="272" height="508"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSW-Cy-GIx">
+                                <rect key="frame" x="239" y="51" width="88" height="30"/>
+                                <state key="normal" title="Photo library"/>
+                                <connections>
+                                    <action selector="PhotoLibraryAction:" destination="o3f-zN-dyE" eventType="touchUpInside" id="hwl-Jn-Bfa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="Camera" destination="YUn-se-83M" id="CUJ-TA-zjO"/>
+                        <outlet property="ImageDisplay" destination="EhA-Ac-u7e" id="Vfg-Is-q5m"/>
+                        <outlet property="PhotoLibrary" destination="gSW-Cy-GIx" id="GHB-YP-Ke8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="obb-qh-wiq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1143.5" y="1183.5"/>
+        </scene>
         <!--Menu Table View Controller-->
         <scene sceneID="5Jg-vf-oQf">
             <objects>
@@ -64,7 +108,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Kga-kh-qhq" kind="push" identifier="ShowSearch" id="C1J-w7-ZWq"/>
+                                    <segue destination="Kga-kh-qhq" kind="push" identifier="ShowMenu" id="C1J-w7-ZWq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -96,7 +140,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="82U-JT-DSA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="201" y="470"/>
+            <point key="canvasLocation" x="159" y="494"/>
         </scene>
     </scenes>
     <resources>

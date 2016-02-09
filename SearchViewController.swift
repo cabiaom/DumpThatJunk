@@ -8,19 +8,29 @@
 
 import UIKit
 
+// need to rename this to MenuItemViewController somehow
+// I tried before but it crashes the app
+
 class SearchViewController: UIViewController {
     
     @IBOutlet weak var SearchLabel: UILabel!
-
     @IBOutlet weak var searchImage: UIImageView!
     
-    var menuName: String?
+    var menu: Menu?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        SearchLabel.text = menuName
-        searchImage.image = UIImage(named: "SearchButton")
+        if let m = menu {
+            SearchLabel.text = m.name
+            if let i = m.menuImage
+            {
+                searchImage.image = UIImage(named: i)
+            }
+        }
+        
+        
+        
         
 
         // Do any additional setup after loading the view.
